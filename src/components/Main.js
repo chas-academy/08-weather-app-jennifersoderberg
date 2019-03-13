@@ -1,24 +1,6 @@
 import React from 'react';
 
-export default class Main extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            long: null,
-            lat: null
-        }
-    }
-
- componentDidMount() {
-  window.navigator.geolocation.getCurrentPosition(
-    position => this.setState({
-      long: position.coords.longitude, 
-      lat: position.coords.latitude
-    })  
-  );
-}
-
-    render() {
+export default function Main() {
         return(
             <div style={outerDivStyle}>
                 <div style={innerDivStyle}>
@@ -27,9 +9,6 @@ export default class Main extends React.Component {
             </div>
         )
     }
-
-    
-}
 
 const outerDivStyle = {
     display: "flex",
