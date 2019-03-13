@@ -1,18 +1,15 @@
 import React from "react";
+import ForecastsDataContainer from "../components/forecasts/ForecastsDataContainer";
 
 const withLocation = WrappedComponent =>
   class extends React.Component {
-    constructor() {
-      super();
-
-      this.state = {
-        position: {
-          long: null,
-          lat: null
-        }
-      };
+    state = {
+      position: {
+        long: null,
+        lat: null
+      }
     }
-
+  
     componentDidMount() {
       window.navigator.geolocation.getCurrentPosition(position =>
         this.setState({
@@ -26,8 +23,14 @@ const withLocation = WrappedComponent =>
     }
 
     render() {
-      return <WrappedComponent {...this.state} {...this.props} />;
-    }
+      const { position } = this.state; 
+      return (
+        <WrappedComponent 
+        position={position} 
+        {...this.props} 
+      />
+      )
+    }  
   };
 
 export default withLocation;

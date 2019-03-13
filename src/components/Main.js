@@ -1,10 +1,11 @@
 import React from 'react';
+import ForecastsDataContainer from './forecasts/ForecastsDataContainer';
 
 export default function Main() {
         return(
             <div style={outerDivStyle}>
                 <div style={innerDivStyle}>
-                    <h1>Main</h1>
+                    <ForecastsDataContainer />
                 </div>
             </div>
         )
