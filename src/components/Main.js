@@ -20,8 +20,10 @@ export default class Main extends React.Component {
 
     render() {
         return(
-            <div style={divStyle}>
-                <h1>Main</h1>
+            <div style={outerDivStyle}>
+                <div style={innerDivStyle}>
+                    <h1>Main</h1>
+                </div>
             </div>
         )
     }
@@ -29,7 +31,16 @@ export default class Main extends React.Component {
     
 }
 
-const divStyle = {
+const outerDivStyle = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "80%"
+}
+
+const innerDivStyle = {
     height: "80%",
-    backgroundColor: "lightyellow"
+    width: "80%",
+    borderRadius: "10px",
+    backgroundColor: "#ddf2ff"
 }

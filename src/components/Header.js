@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Header() {
     return(
-        <div>
+        <div style={divStyle}>
             {/* <h1>Header</h1> */}
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <a className="navbar-brand" href="#">Navbar</a>
@@ -22,4 +22,8 @@ export default function Header() {
             </nav>
         </div>
     )
+}
+
+const divStyle = {
+    height: "10%"
 }

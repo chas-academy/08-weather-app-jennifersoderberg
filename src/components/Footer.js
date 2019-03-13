@@ -3,12 +3,20 @@ import React from 'react';
 export default function Footer() {
     return(
         <div style={divStyle}>
-            <h1>Footer</h1>
+            <a style={linkStyle} href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
         </div>
     )
 }
 
 const divStyle = {
-    height: "20%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "10%",
     backgroundColor: "grey"
+}
+
+const linkStyle = {
+    fontStyle: "italic",
+    color: "whitesmoke",
 }
