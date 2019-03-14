@@ -2,21 +2,19 @@ import React from 'react'
 import { compose } from "recompose";
 
 import withData from "../HOC/withData";
-import withLocation from '../HOC/withLocation';
 
 //Vi skapar en komponent...
-const Container = ({ data }) => WrappedComponent => {
+const Container = ({data}) => WrappedComponent => {
   //..som returnerar en ny komponent..
   const container = props => <WrappedComponent {...props} />
 
-  //..som returnerar withData och withLocation...
+  //..som returnerar withData som innehåller geolocation data nu...igen
 
   return compose(
-    withLocation,
     withData(data),
   )(container) //..och knyter denna till container (den nya componenten)
 
-  
+
 }
 
-export default Container
+export default Container;
